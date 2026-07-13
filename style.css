@@ -2,16 +2,17 @@
    DESIGN TOKENS
    ========================================================= */
 :root {
-  /* Color */
-  --color-primary: #2563EB;
-  --color-primary-dark: #1D4ED8;
-  --color-primary-tint: #EFF4FF;
+  /* Color — an indigo-leaning blue instead of the default Tailwind blue-600,
+     paired with a warmer near-black ink instead of flat #111827/#000 */
+  --color-primary: #3B57D9;
+  --color-primary-dark: #2C42B0;
+  --color-primary-tint: #EEF1FC;
   --color-bg: #FFFFFF;
-  --color-bg-secondary: #F8FAFC;
-  --color-text: #111827;
-  --color-text-secondary: #6B7280;
-  --color-border: #E5E7EB;
-  --color-code-bg: #0F172A;
+  --color-bg-secondary: #F6F7FB;
+  --color-text: #14161F;
+  --color-text-secondary: #616676;
+  --color-border: #E4E5EE;
+  --color-code-bg: #10121C;
 
   /* Type */
   --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -290,34 +291,22 @@ button:focus-visible {
 
 .stats__grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
+  align-items: start;
 }
 
-.stat-card {
-  background: var(--color-bg-secondary);
+/* These are <img> badges pulled live by username — just need clean framing */
+.stat-embed {
+  width: 100%;
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
-  padding: 32px 24px;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
+  min-height: 180px;
+  background: var(--color-bg-secondary);
 }
 
-.stat-card__number {
-  font-family: var(--font-mono);
-  font-size: 34px;
-  font-weight: 700;
-  color: var(--color-primary);
-}
-
-.stat-card__label {
-  font-size: 14px;
-  color: var(--color-text-secondary);
-}
-
-@media (max-width: 720px) {
-  .stats__grid { grid-template-columns: repeat(2, 1fr); }
+@media (max-width: 800px) {
+  .stats__grid { grid-template-columns: 1fr; }
 }
 
 /* =========================================================
@@ -360,6 +349,26 @@ button:focus-visible {
   padding: 40px;
   display: flex;
   flex-direction: column;
+}
+
+.project-card__meta {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.tag {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 5px 10px;
+  border-radius: 999px;
+  background: var(--color-bg-secondary);
+  color: var(--color-text-secondary);
+}
+
+.tag--status {
+  background: var(--color-primary-tint);
+  color: var(--color-primary-dark);
 }
 
 .project-card__title {
@@ -549,35 +558,17 @@ button:focus-visible {
 }
 
 .github__panel {
-  background: var(--color-code-bg);
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
   border-radius: var(--radius);
-  padding: 32px;
+  padding: 24px;
   margin-bottom: 48px;
 }
 
-.contribution-grid__cells {
-  display: grid;
-  grid-template-columns: repeat(26, 1fr);
-  grid-auto-flow: column;
-  gap: 4px;
-}
-
-.cell {
+.activity-graph {
   width: 100%;
-  aspect-ratio: 1;
-  border-radius: 2px;
-  background: rgba(255, 255, 255, 0.06);
-}
-.cell--1 { background: rgba(37, 99, 235, 0.35); }
-.cell--2 { background: rgba(37, 99, 235, 0.55); }
-.cell--3 { background: rgba(37, 99, 235, 0.75); }
-.cell--4 { background: #2563EB; }
-
-.github__note {
-  font-family: var(--font-mono);
-  font-size: 12px;
-  color: rgba(255, 255, 255, 0.4);
-  margin-top: 16px;
+  min-height: 200px;
+  display: block;
 }
 
 .github__repos-title {
@@ -613,6 +604,13 @@ button:focus-visible {
 .repo-item__desc {
   font-size: 13px;
   color: var(--color-text-secondary);
+}
+
+.repo-item--loading {
+  padding: 18px 20px;
+  font-size: 13px;
+  color: var(--color-text-secondary);
+  font-family: var(--font-mono);
 }
 
 /* =========================================================
