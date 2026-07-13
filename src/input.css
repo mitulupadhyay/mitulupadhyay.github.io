@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+.nav{
+    @apply sticky top-0 bg-white/80 backdrop-blur-md border-2 border-gray-200;
+}
+.nav-inner{
+    @apply max-w-[1200px] mx-auto h-20 px-10 flex items-center justify-between;
+}
+.nav-logo{
+    @apply flex items-center text-xl font-bold transition-all duration-300 hover:scale-115;
+}
+.nav-logo a{
+    @apply text-gray-900;
+}
+.nav-logo span{
+    @apply text-blue-600;
+}
+
+.nav-link{
+    @apply hidden md:flex items-center gap-9;
+}
+.nav-link a{
+    @apply relative inline-block text-gray-700 font-medium hover:text-blue-600 
+    hover:-translate-y-0.5 
+    transition-all duration-300;
+}
+.nav-link a::after{
+    content:"";
+    position:absolute;
+
+    left:0;
+    bottom:-5px;
+
+    width:0%;
+    height:2px;
+
+    background:#2563EB;
+
+    transition:width .3s ease;
+}
+
+.nav-link a:hover::after{
+    width:100%;
+}
+.resume-btn a{
+    @apply hidden md:flex bg-blue-600 text-white px-5 py-2.5 rounded-xl font-medium
+     hover:bg-blue-700 border-2 border-blue-600 
+     hover:-translate-y-0.5 transition-all duration-300;
+}
+.menu-btn{
+    @apply md:hidden cursor-pointer;
+}
+
+.menu-btn i{
+    @apply text-2xl text-gray-900 transition-all duration-300 hover:text-blue-600;
+}
+
+
+.mobile-menu{
+    @apply absolute
+    left-0 top-full w-full bg-white flex flex-col px-6 py-6 gap-5 opacity-0 
+    invisible -translate-y-3 transition-all duration-300;
+}
+
+.mobile-menu.active{
+    @apply opacity-100 visible translate-y-0;
+}
+.mobile-menu a:not(.mobile-resume){
+    @apply text-lg font-medium text-gray-800 hover:text-blue-600 transition-colors;
+}
+.mobile-resume{
+    @apply bg-blue-600 text-white py-3 rounded-xl text-center font-medium 
+    transition-all duration-300;
+}
+
+.mobile-resume:hover{
+    @apply bg-blue-700 text-white;
+}
