@@ -1,493 +1,402 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mitul Upadhyay — Software Engineering Student</title>
+  <meta name="description" content="Mitul Upadhyay — BTech CSE student at GEHU building scalable full-stack web applications. Currently building CampusConnect.">
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Fonts: Inter for headings/body, JetBrains Mono for data/labels/badges -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <title>Mitul | Software Developer</title>
-
-    <!-- Google Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-
-    <link rel="preconnect"
-        href="https://fonts.gstatic.com"
-        crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
-
-    <!-- Font Awesome -->
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-
-    <!-- CSS -->
-    <link rel="stylesheet"
-        href="style.css">
-
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<!-- ================= NAVBAR ================= -->
+  <!-- ============================================= -->
+  <!-- NAV -->
+  <!-- ============================================= -->
+  <header class="nav">
+    <div class="nav__inner">
+      <a href="#top" class="nav__logo">MU<span class="nav__logo-dot">.</span></a>
+      <nav class="nav__links">
+        <a href="#projects">Projects</a>
+        <a href="#stack">Stack</a>
+        <a href="#journey">Journey</a>
+        <a href="#github">GitHub</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <!-- REPLACE href with your actual resume file/link -->
+      <a href="#" class="btn btn--small btn--primary nav__resume">Resume</a>
+    </div>
+  </header>
 
-<header class="navbar">
+  <main id="top">
 
-    <div class="container nav-container">
+    <!-- ============================================= -->
+    <!-- 1. HERO -->
+    <!-- Job: prove in 5 seconds that this person builds real software.
+         The eyebrow + name + one-line proof point + a real code artifact
+         on the right (not a stock illustration) do that work. -->
+    <!-- ============================================= -->
+    <section class="hero">
+      <div class="hero__inner">
+        <div class="hero__content">
+          <p class="eyebrow">Software Engineering Student — GEHU</p>
+          <h1 class="hero__name">Mitul Upadhyay</h1>
+          <p class="hero__tagline">
+            Building scalable full-stack web applications with modern, maintainable architecture.
+          </p>
+          <p class="hero__detail">
+            Currently building <strong>CampusConnect</strong> — a campus event &amp; club management
+            platform with role-based access for students, organizers, teachers, and admins.
+          </p>
+          <p class="hero__status">
+            <!-- Adjust cycle/year as needed -->
+            Looking for a Summer 2027 Software Engineering internship.
+          </p>
 
-        <a href="#" class="logo">
+          <div class="hero__actions">
+            <a href="#projects" class="btn btn--primary">View Projects</a>
+            <a href="#" class="btn btn--secondary">Download Resume</a>
+            <!-- REPLACE with real GitHub / LinkedIn URLs -->
+            <a href="#" class="btn btn--ghost" aria-label="GitHub profile">GitHub</a>
+            <a href="#" class="btn btn--ghost" aria-label="LinkedIn profile">LinkedIn</a>
+          </div>
+        </div>
 
-            Mitul
+        <div class="hero__visual" aria-hidden="true">
+          <div class="code-card">
+            <div class="code-card__bar">
+              <span class="code-card__dot"></span>
+              <span class="code-card__dot"></span>
+              <span class="code-card__dot"></span>
+              <span class="code-card__filename">campusconnect.config.js</span>
+            </div>
+            <pre class="code-card__body"><code><span class="tok-key">const</span> <span class="tok-var">campusConnect</span> = {
+  <span class="tok-prop">roles</span>: [<span class="tok-str">'student'</span>, <span class="tok-str">'organizer'</span>, <span class="tok-str">'teacher'</span>, <span class="tok-str">'admin'</span>],
+  <span class="tok-prop">stack</span>: <span class="tok-str">'Tailwind CSS v4'</span>,
+  <span class="tok-prop">architecture</span>: <span class="tok-str">'modular components'</span>,
+  <span class="tok-prop">status</span>: <span class="tok-str">'in active development'</span>,
+};
 
-        </a>
+<span class="tok-key">export default</span> <span class="tok-var">campusConnect</span>;</code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <nav>
+    <!-- ============================================= -->
+    <!-- 2. QUICK STATS -->
+    <!-- Job: give the recruiter fast, scannable proof of activity/scale.
+         Numbers are left as placeholders — fill in real, defensible figures. -->
+    <!-- ============================================= -->
+    <section class="stats">
+      <div class="section-inner">
+        <div class="stats__grid">
+          <div class="stat-card">
+            <span class="stat-card__number"><!-- e.g. 3 -->—</span>
+            <span class="stat-card__label">Projects Built</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-card__number"><!-- e.g. 10 -->—</span>
+            <span class="stat-card__label">Technologies</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-card__number"><!-- pull from GitHub API/profile -->—</span>
+            <span class="stat-card__label">GitHub Commits</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-card__number"><!-- e.g. 150+ -->—</span>
+            <span class="stat-card__label">DSA Problems Solved</span>
+          </div>
+        </div>
+      </div>
+    </section>
 
-            <ul class="nav-links">
+    <!-- ============================================= -->
+    <!-- 3. FEATURED PROJECTS -->
+    <!-- Job: this is the load-bearing section — a recruiter who reads
+         nothing else should read this. One real, detailed case study
+         beats three shallow ones. -->
+    <!-- ============================================= -->
+    <section class="projects" id="projects">
+      <div class="section-inner">
+        <p class="eyebrow">Featured Work</p>
+        <h2 class="section-title">What I've built</h2>
 
-                <li><a href="#home">Home</a></li>
+        <article class="project-card">
+          <div class="project-card__media">
+            <!-- REPLACE with an actual product screenshot -->
+            <div class="project-card__media-placeholder">Add product screenshot</div>
+          </div>
+          <div class="project-card__content">
+            <h3 class="project-card__title">CampusConnect</h3>
+            <p class="project-card__pitch">
+              A campus event and club management platform that gives students, organizers,
+              teachers, and admins a single place to discover, run, and approve campus activity.
+            </p>
 
-                <li><a href="#about">About</a></li>
-
-                <li><a href="#skills">Skills</a></li>
-
-                <li><a href="#projects">Projects</a></li>
-
+            <ul class="project-card__features">
+              <li>Role-based access for four distinct user types</li>
+              <li>Event discovery and club management workflows</li>
+              <li>AI-assisted event recommendations</li>
+              <li>Admin approval pipeline for new events and clubs</li>
             </ul>
 
-        </nav>
-
-    </div>
-
-</header>
-
-<!-- ================= HERO ================= -->
-
-<section class="hero" id="home">
-
-    <div class="container">
-
-        <div class="hero-text center">
-
-            <p class="intro">
-
-                Hi, I'm
-
-            </p>
-
-            <h1>
-
-                Mitul
-
-            </h1>
-
-            <h2>
-
-                Software Developer
-
-            </h2>
-
-            <p class="description">
-
-                I enjoy building clean, responsive and modern web
-                applications with a strong focus on user experience,
-                maintainability and performance.
-
-            </p>
-
-            <div class="hero-buttons">
-
-                <a href="#projects"
-                    class="btn primary-btn">
-
-                    View Projects
-
-                </a>
-
+            <div class="project-card__stack">
+              <span class="badge">HTML5</span>
+              <span class="badge">CSS3</span>
+              <span class="badge">Tailwind CSS v4</span>
+              <span class="badge">JavaScript</span>
+              <!-- Add backend/database badges once that layer exists -->
             </div>
 
+            <div class="project-card__actions">
+              <a href="#" class="btn btn--small btn--secondary">GitHub</a>
+              <a href="#" class="btn btn--small btn--secondary">Live Demo</a>
+              <a href="#" class="btn btn--small btn--ghost">Case Study →</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Add more <article class="project-card"> blocks here as you ship more projects -->
+        <p class="projects__more-note">More projects in progress — check back soon.</p>
+      </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- 4. TECH STACK -->
+    <!-- Job: let an engineer skim this in 3 seconds and know exactly
+         what you can build with. No percentages — those are unverifiable
+         and read as filler to anyone technical. -->
+    <!-- ============================================= -->
+    <section class="stack" id="stack">
+      <div class="section-inner">
+        <p class="eyebrow">Tech Stack</p>
+        <h2 class="section-title">Tools I build with</h2>
+
+        <div class="stack__grid">
+          <div class="stack__group">
+            <h3 class="stack__group-title">Languages</h3>
+            <div class="stack__pills">
+              <span class="pill">C++</span>
+              <span class="pill">C</span>
+              <span class="pill">JavaScript</span>
+            </div>
+          </div>
+
+          <div class="stack__group">
+            <h3 class="stack__group-title">Frontend</h3>
+            <div class="stack__pills">
+              <span class="pill">HTML5</span>
+              <span class="pill">CSS3</span>
+              <span class="pill">Tailwind CSS v4</span>
+            </div>
+          </div>
+
+          <div class="stack__group">
+            <h3 class="stack__group-title">Backend</h3>
+            <!-- Fill in once your backend stack is decided -->
+            <div class="stack__pills">
+              <span class="pill pill--placeholder">Add once decided</span>
+            </div>
+          </div>
+
+          <div class="stack__group">
+            <h3 class="stack__group-title">Database</h3>
+            <div class="stack__pills">
+              <span class="pill pill--placeholder">Add once decided</span>
+            </div>
+          </div>
+
+          <div class="stack__group">
+            <h3 class="stack__group-title">Tools</h3>
+            <div class="stack__pills">
+              <span class="pill">Git</span>
+              <span class="pill">GitHub</span>
+              <span class="pill">VS Code</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- 5. MY JOURNEY -->
+    <!-- Job: show trajectory, not just current skill. The git-graph style
+         timeline is a deliberate nod to version control rather than a
+         generic dotted line — it's the one "signature" visual on the page. -->
+    <!-- ============================================= -->
+    <section class="journey" id="journey">
+      <div class="section-inner">
+        <p class="eyebrow">Journey</p>
+        <h2 class="section-title">How I got here</h2>
+
+        <ol class="timeline">
+          <li class="timeline__item">
+            <span class="timeline__node"></span>
+            <div class="timeline__content">
+              <h3>Started programming</h3>
+              <p>First lines of code — the usual mix of curiosity and broken semicolons.</p>
+            </div>
+          </li>
+          <li class="timeline__item">
+            <span class="timeline__node"></span>
+            <div class="timeline__content">
+              <h3>Learned HTML &amp; CSS</h3>
+              <p>Static pages, layout fundamentals, the building blocks of the web.</p>
+            </div>
+          </li>
+          <li class="timeline__item">
+            <span class="timeline__node"></span>
+            <div class="timeline__content">
+              <h3>Built first projects</h3>
+              <p>Moved from tutorials to shipping small, complete things end to end.</p>
+            </div>
+          </li>
+          <li class="timeline__item">
+            <span class="timeline__node"></span>
+            <div class="timeline__content">
+              <h3>Started DSA in C++</h3>
+              <p>Arrays, strings, and core algorithms — building problem-solving discipline.</p>
+            </div>
+          </li>
+          <li class="timeline__item">
+            <span class="timeline__node"></span>
+            <div class="timeline__content">
+              <h3>Learning React</h3>
+              <p>Component-driven thinking for interfaces that scale past a single page.</p>
+            </div>
+          </li>
+          <li class="timeline__item">
+            <span class="timeline__node"></span>
+            <div class="timeline__content">
+              <h3>Building CampusConnect</h3>
+              <p>A modular Tailwind CSS v4 architecture with reusable component partials.</p>
+            </div>
+          </li>
+          <li class="timeline__item timeline__item--current">
+            <span class="timeline__node"></span>
+            <div class="timeline__content">
+              <h3>Preparing for internship</h3>
+              <p>Sharpening DSA, deepening full-stack fluency, shipping in public.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- 6. GITHUB -->
+    <!-- Job: back up the "builds real software" claim with evidence of
+         consistent activity. Contribution grid below is a static placeholder —
+         swap for a real screenshot or embed of your actual graph. -->
+    <!-- ============================================= -->
+    <section class="github" id="github">
+      <div class="section-inner">
+        <p class="eyebrow">GitHub Activity</p>
+        <h2 class="section-title">Building in public</h2>
+
+        <div class="github__panel">
+          <!-- PLACEHOLDER GRID — replace with a real screenshot of your
+               GitHub contribution graph, or an embed, before publishing -->
+          <div class="contribution-grid" aria-label="Placeholder GitHub contribution graph">
+            <!-- 7 rows x 26 cols placeholder, intensity varies via nth-child -->
+            <div class="contribution-grid__cells"></div>
+          </div>
+          <p class="github__note">Replace this placeholder with your real contribution graph.</p>
         </div>
 
-    </div>
-
-</section>
-
-<!-- ================= ABOUT ================= -->
-
-<section class="about section"
-    id="about">
-
-    <div class="container">
-
-        <div class="section-title">
-
-            <h2>
-
-                About Me
-
-            </h2>
-
-            <p>
-
-                Passionate about creating elegant digital products
-                and continuously improving my development skills.
-
-            </p>
-
+        <div class="github__repos">
+          <h3 class="github__repos-title">Recent repositories</h3>
+          <ul class="repo-list">
+            <li class="repo-item">
+              <span class="repo-item__name">campusconnect</span>
+              <span class="repo-item__desc">Campus event &amp; club management platform — frontend</span>
+            </li>
+            <li class="repo-item">
+              <span class="repo-item__name"><!-- add real repo -->—</span>
+              <span class="repo-item__desc">Add your repository</span>
+            </li>
+            <li class="repo-item">
+              <span class="repo-item__name"><!-- add real repo -->—</span>
+              <span class="repo-item__desc">Add your repository</span>
+            </li>
+          </ul>
         </div>
-
-        <div class="about-content center">
-
-            <p>
-
-                I'm a software developer who enjoys transforming ideas
-                into clean, responsive and user-friendly websites.
-
-            </p>
-
-            <p>
-
-                I believe good software combines thoughtful design,
-                maintainable code and attention to detail.
-
-            </p>
-
-            <p>
-
-                My goal is to build fast, accessible and visually
-                appealing web applications while constantly learning
-                modern technologies.
-
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- ================= SKILLS ================= -->
-
-<section class="skills section"
-    id="skills">
-
-    <div class="container">
-
-        <div class="section-title">
-
-            <h2>
-
-                Skills
-
-            </h2>
-
-            <p>
-
-                Technologies that I use for building modern websites.
-
-            </p>
-
-        </div>
-
-        <div class="skills-grid">
-
-            <article class="skill-card">
-
-                <i class="fa-brands fa-html5"></i>
-
-                <h3>HTML5</h3>
-
-            </article>
-
-            <article class="skill-card">
-
-                <i class="fa-brands fa-css3-alt"></i>
-
-                <h3>CSS3</h3>
-
-            </article>
-
-            <article class="skill-card">
-
-                <i class="fa-brands fa-js"></i>
-
-                <h3>JavaScript</h3>
-
-            </article>
-
-            <article class="skill-card">
-
-                <i class="fa-brands fa-python"></i>
-
-                <h3>Python</h3>
-
-            </article>
-
-            <article class="skill-card">
-
-                <i class="fa-brands fa-git-alt"></i>
-
-                <h3>Git</h3>
-
-            </article>
-
-            <article class="skill-card">
-
-                <i class="fa-brands fa-github"></i>
-
-                <h3>GitHub</h3>
-
-            </article>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- ================= PROJECTS ================= -->
-
-<section class="projects section"
-    id="projects">
-
-    <div class="container">
-
-        <div class="section-title">
-
-            <h2>
-
-                Featured Projects
-
-            </h2>
-
-            <p>
-
-                A few projects showcasing my development skills.
-
-            </p>
-
-        </div>
-
-        <div class="projects-grid">
-
-            <!-- Project 1 -->
-
-            <article class="project-card">
-
-                <img src="img/campusConnect.png"
-                    alt="Campus Connect">
-
-                <div class="project-content">
-
-                    <h3>
-
-                        Campus Connect
-
-                    </h3>
-
-                    <p>
-
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, harum?
-
-                    </p>
-
-                    <div class="tags">
-
-                        <span>HTML</span>
-                        <span>CSS</span>
-                        <span>JS</span>
-
-                    </div>
-
-                    <div class="project-links">
-
-                        <a href="https://github.com/mitulupadhyay/Campus-Connect"
-                            target="_blank">
-
-                            GitHub
-
-                        </a>
-
-                        <a href="#">
-
-                            Coming Soon
-
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </article>
-
-            <!-- Project 2 -->
-
-            <article class="project-card">
-
-                <img src="img/Chrono.jpeg"
-                    alt="chrono">
-
-                <div class="project-content">
-
-                    <h3>
-
-                        Chrono-Gen
-
-                    </h3>
-
-                    <p>
-
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, vitae?
-
-                    </p>
-
-                    <div class="tags">
-
-                        <span>HTML</span>
-
-                        <span>CSS</span>
-
-                    </div>
-
-                    <div class="project-links">
-
-                        <a href="https://github.com/mitulupadhyay/ChronoGen-Automatic-Timetable-Generator"
-                            target="_blank">
-
-                            GitHub
-
-                        </a>
-
-                        <a href="#">
-
-                            Coming Soon
-
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </article>
-
-        </div>
-
-    </div>
-
-</section>
-<!-- ================= CONTACT ================= -->
-
-<section class="contact section" id="contact">
-
-    <div class="container">
-
-        <div class="section-title">
-
-            <h2>
-
-                Contact Me
-
-            </h2>
-
-            <p>
-
-                Have a project in mind or just want to connect?
-                Feel free to send me a message.
-
-            </p>
-
-        </div>
-
-        <form class="contact-form">
-
-            <input
-                type="text"
-                placeholder="Your Name"
-                required>
-
-            <input
-                type="email"
-                placeholder="Your Email"
-                required>
-
-            <textarea
-                rows="6"
-                placeholder="Your Message"
-                required></textarea>
-
-            <button
-                type="submit"
-                class="btn primary-btn">
-
-                Send Message
-
-            </button>
-
-        </form>
-
-    </div>
-
-</section>
-
-<!-- ================= FOOTER ================= -->
-
-<footer class="footer">
-
-    <div class="container">
-
-        <h3>
-
-            Mitul
-
-        </h3>
-
-        <p>
-
-            Thank you for visiting my portfolio.
-
+      </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- 7. ABOUT -->
+    <!-- Job: one paragraph, engineering mindset, no hobbies filler. -->
+    <!-- ============================================= -->
+    <section class="about">
+      <div class="section-inner section-inner--narrow">
+        <p class="eyebrow">About</p>
+        <p class="about__text">
+          I'm a BTech CSE student at Graphic Era Hill University focused on writing software
+          that's built to be maintained, not just to work once. My day-to-day splits between
+          strengthening core algorithms and data structures in C++ and building CampusConnect,
+          a full-stack platform where I've deliberately chosen a modular, component-based
+          architecture over quick shortcuts — because the way a codebase is structured matters
+          as much as whether the feature ships.
         </p>
+      </div>
+    </section>
 
-        <div class="social-links">
-
-            <a
-                href="https://github.com/yourusername"
-                target="_blank"
-                aria-label="GitHub">
-
-                <i class="fab fa-github"></i>
-
-            </a>
-
-            <a
-                href="https://linkedin.com/in/yourusername"
-                target="_blank"
-                aria-label="LinkedIn">
-
-                <i class="fab fa-linkedin"></i>
-
-            </a>
-
-        </div>
-
-        <p class="copyright">
-
-            © 2026 Mitul. All Rights Reserved.
-
+    <!-- ============================================= -->
+    <!-- 8. CONTACT -->
+    <!-- Job: make it a 1-click action, no form friction. -->
+    <!-- ============================================= -->
+    <section class="contact" id="contact">
+      <div class="section-inner section-inner--narrow">
+        <p class="eyebrow">Contact</p>
+        <h2 class="section-title">Let's talk</h2>
+        <p class="contact__lede">
+          Open to Software Engineering internship opportunities — reach out directly.
         </p>
+        <div class="contact__links">
+          <!-- REPLACE all hrefs below with real destinations -->
+          <a href="mailto:you@example.com" class="contact__link">Email</a>
+          <a href="#" class="contact__link">GitHub</a>
+          <a href="#" class="contact__link">LinkedIn</a>
+          <a href="#" class="contact__link">Resume</a>
+        </div>
+      </div>
+    </section>
 
-        <a
-            href="#home"
-            class="top-link">
+  </main>
 
-            Back to Top ↑
-
-        </a>
-
+  <!-- ============================================= -->
+  <!-- 9. FOOTER -->
+  <!-- ============================================= -->
+  <footer class="footer">
+    <div class="section-inner footer__inner">
+      <p>Designed &amp; built by Mitul Upadhyay</p>
+      <p id="year">2026</p>
     </div>
+  </footer>
 
-</footer>
+  <script>
+    // Minimal, necessary-only JS: current year in footer, and
+    // procedural generation of the placeholder contribution grid.
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const grid = document.querySelector('.contribution-grid__cells');
+    if (grid) {
+      const totalCells = 7 * 26;
+      let html = '';
+      for (let i = 0; i < totalCells; i++) {
+        const level = Math.floor(Math.random() * 5); // 0 (empty) to 4 (most active)
+        html += `<span class="cell cell--${level}"></span>`;
+      }
+      grid.innerHTML = html;
+    }
+  </script>
 
 </body>
-
 </html>
