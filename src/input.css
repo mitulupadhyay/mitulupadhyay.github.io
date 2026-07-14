@@ -140,6 +140,8 @@ body{
 
 
 /* PRIMARY AND SECONDARY BUTTON  */
+
+
 .primary-btn{
     @apply bg-blue-600 text-white px-6 py-3 rounded-xl font-medium border-2 border-blue-600 transition-all duration-300;
 }
@@ -154,6 +156,9 @@ body{
 .secondary-btn:hover{
     @apply border-blue-600 text-blue-600 -translate-y-1;
 }
+
+
+
 
 /* ===CODE CARD === */
 
@@ -232,7 +237,6 @@ body{
 
 /* === STATS SECTION === */
 
-/* ===== STATS SECTION ===== */
 
 .stats{
     @apply py-12;
@@ -317,7 +321,7 @@ body{
 }
 
 
-/* ================= PROJECTS ================= */
+/*  PROJECTS  */
 
 .projects{
     @apply py-20;
@@ -328,7 +332,7 @@ body{
 }
 
 
-/* ================= HEADING ================= */
+/*  HEADING  */
 
 .projects-heading{
 
@@ -387,7 +391,7 @@ body{
 
 
 
-/* ================= GRID ================= */
+/*  GRID  */
 
 
 .projects-grid{
@@ -401,7 +405,7 @@ body{
 
 
 
-/* ================= CARD ================= */
+/*  CARD */
 
 
 .project-card{
@@ -434,7 +438,7 @@ body{
 
 
 
-/* ================= IMAGE / BROWSER ================= */
+/*  IMAGE / BROWSER */
 
 
 .project-image{
@@ -532,7 +536,7 @@ body{
 
 
 
-/* ================= TAG ================= */
+/*  TAG */
 
 
 .featured-tag{
@@ -563,7 +567,7 @@ body{
 
 
 
-/* ================= CONTENT ================= */
+/*  CONTENT  */
 
 
 .project-content{
@@ -612,7 +616,7 @@ body{
 
 
 
-/* ================= PROJECT META ================= */
+/*  PROJECT META  */
 
 
 .project-meta{
@@ -651,7 +655,7 @@ body{
 
 
 
-/* ================= STACK ================= */
+/*  STACK */
 
 
 .tech-stack{
@@ -688,7 +692,7 @@ body{
 
 
 
-/* ================= FEATURES ================= */
+/*  FEATURES  */
 
 
 .project-features{
@@ -729,7 +733,7 @@ body{
 
 
 
-/* ================= BUTTONS ================= */
+/*  BUTTONS  */
 
 
 .project-buttons{
@@ -812,7 +816,7 @@ body{
 
 
 
-/* ================= PROJECT TYPES ================= */
+/*  PROJECT TYPES  */
 
 
 .project-card.featured{
@@ -832,7 +836,7 @@ body{
 
 
 
-/* ================= RESPONSIVE ================= */
+/*  RESPONSIVE = */
 
 
 @media(max-width:768px){
@@ -1037,6 +1041,176 @@ body{
 
     .tools-card{
         @apply md:col-span-1;
+    }
+
+}
+
+/* JOURNEY SECTION */
+
+.journey{
+    @apply py-20 bg-gray-50;
+}
+
+.journey-inner{
+    @apply max-w-[1000px] mx-auto px-6;
+}
+
+/* Heading  */
+
+.journey-heading{
+    @apply text-center mb-14;
+}
+
+.journey-badge{
+    @apply inline-flex items-center gap-2
+    bg-blue-100 text-blue-700
+    px-4 py-2
+    rounded-full
+    font-medium
+    mb-5;
+}
+
+.journey-heading h2{
+    @apply text-4xl font-bold text-gray-900 mb-4;
+}
+
+.journey-heading h2 span{
+    @apply text-blue-600;
+}
+
+.journey-heading p{
+    @apply max-w-2xl mx-auto
+    text-gray-600
+    leading-7;
+}
+
+/* Timeline */
+
+.timeline{
+    @apply relative
+    ml-8
+    pl-10
+    border-l-2
+    border-blue-200
+    space-y-10;
+}
+/* Card */
+
+.timeline-card{
+    @apply relative
+    bg-white
+    border
+    border-gray-200
+    rounded-2xl
+    p-6
+    shadow-md
+    transition-all
+    duration-300;
+}
+
+.timeline-card:hover{
+    @apply -translate-y-2
+    shadow-xl;
+    
+}
+
+/* Circle Icon */
+
+.timeline-icon{
+    @apply absolute
+    top-6
+    -left-[66px]
+
+    w-12
+    h-12
+
+    rounded-full
+
+    bg-blue-600
+    text-white
+
+    flex
+    items-center
+    justify-center;
+}
+/* Trophy */
+
+.trophy{
+    @apply bg-yellow-500;
+}
+
+/* ===== Year ===== */
+
+.timeline-year{
+    @apply text-sm
+    font-semibold
+    text-blue-600;
+}
+
+/* ===== Title ===== */
+
+.timeline-card h3{
+    @apply text-2xl
+    font-bold
+    text-gray-900
+    mt-2
+    mb-4;
+}
+
+/*  Description  */
+
+.timeline-card p{
+    @apply text-gray-600
+    leading-7
+    mb-5;
+}
+
+/*  Tags */
+
+.timeline-tags{
+    @apply flex
+    flex-wrap
+    gap-3;
+}
+
+.timeline-tags span{
+    @apply bg-gray-100
+    text-gray-700
+    text-sm
+    px-4
+    py-2
+    rounded-full;
+}
+
+/*  Responsive */
+
+@media (max-width:768px){
+
+    .journey{
+        @apply py-16;
+    }
+
+    .journey-heading h2{
+        @apply text-3xl;
+    }
+
+    .timeline{
+        @apply pl-8;
+    }
+
+    .timeline-icon{
+        @apply -left-[45px]
+        w-10
+        h-10
+        text-base;
+    }
+
+    .timeline-card{
+        @apply p-5;
+    }
+
+    .timeline-card h3{
+        @apply text-xl;
     }
 
 }
