@@ -1,13 +1,31 @@
 @import "tailwindcss";
 
+
+@theme {
+    --font-sans: "Inter", sans-serif;
+    --font-mono: "JetBrains Mono", monospace;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: "Inter", sans-serif;
+    @apply bg-white text-gray-900;
+}
+
+
+/* ======= NAVBAR ======= */
 .nav{
-    @apply sticky top-0 bg-white/80 backdrop-blur-md border-2 border-gray-200;
+    @apply sticky top-0 bg-white/80 backdrop-blur-md border-2 border-gray-200 z-900;
 }
 .nav-inner{
     @apply max-w-[1200px] mx-auto h-20 px-10 flex items-center justify-between;
 }
 .nav-logo{
-    @apply flex items-center text-xl font-bold transition-all duration-300 hover:scale-115;
+    @apply flex items-center text-2xl font-bold transition-all duration-300 hover:scale-115;
+    font-family: "JetBrains Mono", monospace;
 }
 .nav-logo a{
     @apply text-gray-900;
@@ -20,9 +38,10 @@
     @apply hidden md:flex items-center gap-9;
 }
 .nav-link a{
-    @apply relative inline-block text-gray-700 font-medium hover:text-blue-600 
+    @apply relative inline-block text-gray-700 font-medium text-base hover:text-blue-600 
     hover:-translate-y-0.5 
     transition-all duration-300;
+    
 }
 .nav-link a::after{
     content:"";
@@ -43,7 +62,7 @@
     width:100%;
 }
 .resume-btn a{
-    @apply hidden md:flex bg-blue-600 text-white px-5 py-2.5 rounded-xl font-medium
+    @apply hidden md:flex bg-blue-600 text-white px-5 py-2.5 rounded-xl font-medium text-base
      hover:bg-blue-700 border-2 border-blue-600 
      hover:-translate-y-0.5 transition-all duration-300;
 }
@@ -75,4 +94,137 @@
 
 .mobile-resume:hover{
     @apply bg-blue-700 text-white;
+}
+
+
+/* ==== HERO PAGE ===== */
+
+.hero{
+    @apply pt-16 pb-20;
+}
+.hero-inner{
+    @apply max-w-[1200px] mx-auto px-6 lg:px-10 flex flex-col lg:flex-row items-start justify-between gap-12;
+}
+.hero-content{
+    @apply  w-full lg:w-1/2;
+}
+.badge{
+    @apply inline-block bg-blue-100 text-blue-700 text-sm font-medium px-4 py-2 rounded-full mb-6;
+}
+.badge i{
+    @apply text-green-700
+}
+.hero-greeting{
+    @apply text-xl text-gray-600 mb-2 font-medium;
+}
+.hero-title{
+    @apply text-6xl font-extrabold text-gray-900 mb-5 leading-tight  md:text-4xl lg:text-6xl;
+}
+.hero-subtitle{
+    @apply text-2xl font-semibold text-gray-700 mb-6 md:text-2xl;
+}
+.hero-description{
+    @apply text-lg text-gray-600 leading-8 mb-5 md:text-lg leading-8;
+}
+.hero-highlight{
+    @apply text-lg text-gray-700 mb-8;
+}
+
+.hero-highlight strong{
+    @apply text-blue-600;
+}
+.hero-btns{
+    @apply flex items-center gap-4 mt-8 flex-col sm:flex-row;
+}
+
+
+
+/* PRIMARY AND SECONDARY BUTTON  */
+.primary-btn{
+    @apply bg-blue-600 text-white px-6 py-3 rounded-xl font-medium border-2 border-blue-600 transition-all duration-300;
+}
+
+.primary-btn:hover{
+    @apply bg-blue-700 -translate-y-1;
+}
+.secondary-btn{
+    @apply border-2 border-gray-600 text-gray-800 px-6 py-3 rounded-xl font-medium transition-all duration-300;
+}
+
+.secondary-btn:hover{
+    @apply border-blue-600 text-blue-600 -translate-y-1;
+}
+
+/* ===CODE CARD === */
+
+.hero-code{
+    @apply rounded-2xl overflow-hidden bg-slate-900 shadow-xl transition-all  duration-300  w-full max-w-sm lg:max-w-md mx-auto;
+}
+.code-header{
+    @apply flex items-center px-4 py-4 border-b border-slate-700;
+}
+.code-dots{
+    @apply flex gap-2;
+}
+
+.dot{
+    @apply w-3 h-3 rounded-full;
+}
+
+.red{
+    @apply bg-red-500;
+}
+
+.yellow{
+    @apply bg-yellow-400;
+}
+
+.green{
+    @apply bg-green-500;
+}
+.code-file{
+    @apply ml-4 text-sm text-slate-400;
+    font-family: "JetBrains Mono", monospace;
+}
+.code-content{
+    @apply p-2 text-sm text-slate-200  leading-7;
+    font-family:"JetBrains Mono", monospace;
+}
+.keyword{
+    @apply text-purple-400;
+}
+
+.variable{
+    @apply text-blue-300;
+}
+
+.property{
+    @apply text-cyan-300;
+}
+
+.string{
+    @apply text-green-300;
+}
+.hero-code{
+    @apply transition-all duration-300;
+}
+
+.hero-code:hover{
+    @apply -translate-y-2 shadow-2xl;
+}
+
+@media (max-width: 1023px){
+
+    .hero-content{
+        @apply text-center;
+    }
+
+    .hero-btns{
+        @apply justify-center;
+    }
+
+    .badge{
+        @apply mx-auto;
+    }
+
 }

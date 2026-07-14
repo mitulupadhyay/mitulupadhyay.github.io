@@ -9,6 +9,14 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     />
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
     <title>Mitul Upadhyay - Portfolio</title>
   </head>
   <body>
@@ -50,6 +58,81 @@
         </div>
       </nav>
     </header>
+
+    <!-- === HERO PAGE === -->
+
+    <section class="hero">
+      <div class="hero-inner">
+        <!-- Left -->
+        <div class="hero-content">
+          <div class="badge font-mono">
+            <i class="fa-solid fa-circle"></i>
+            Open to Summer 2027 Software Engineering Internships
+          </div>
+
+          <p class="hero-greeting">Hi, I'm</p>
+
+          <h1 class="hero-title">Mitul Upadhyay</h1>
+
+          <h2 class="hero-subtitle">
+            Computer Science Undergraduate <br />
+            Graphic Era Hill University
+          </h2>
+
+          <p class="hero-description">
+            Building full-stack web applications with modern technologies while
+            strengthening my problem-solving skills through Data Structures &
+            Algorithms.
+          </p>
+
+          <p class="hero-highlight">
+            Currently building <strong>CampusConnect</strong>, an AI-powered
+            campus event management platform.
+          </p>
+
+          <div class="hero-btns">
+            <a href="#" class="primary-btn">View Projects</a>
+            <a href="#" class="secondary-btn">Download Resume</a>
+          </div>
+        </div>
+
+        <!-- Right -->
+        <div class="hero-code">
+          <div class="code-header">
+            <div class="code-dots">
+              <span class="dot red"></span>
+              <span class="dot yellow"></span>
+              <span class="dot green"></span>
+            </div>
+
+            <span class="code-file font-mono"> mitul.config.js </span>
+          </div>
+
+          <pre class="code-content">
+<span class="keyword">const</span> <span class="variable">developer</span> = {
+
+  <span class="property">name</span>: <span class="string">"Mitul Upadhyay"</span>,
+
+  <span class="property">education</span>: <span class="string">"B.Tech CSE • GEHU "</span>,
+
+  <span class="property">currentlyBuilding</span>: <span class="string">"CampusConnect"</span>,
+
+  <span class="property">focus</span>: [
+    <span class="string">"Full-Stack Development"</span>,
+    <span class="string">"Data Structures & Algorithms"</span>,
+    <span class="string">"Clean UI/UX"</span>
+  ],
+
+  <span class="property">nextUp</span>: <span class="string">"React • Node.js • MongoDB"</span>,
+
+  <span class="property">goal</span>: <span class="string">"Summer 2027 SWE Internship"</span>
+
+};
+<span class="keyword">export default</span> <span class="variable">developer</span>;
+</pre>
+        </div>
+      </div>
+    </section>
 
     <script src="/js/index.js"></script>
   </body>
