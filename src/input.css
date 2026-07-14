@@ -320,6 +320,138 @@ body{
 
 }
 
+/* ABOUT  */
+
+.about{
+    @apply py-20;
+}
+
+.about-inner{
+    @apply max-w-[1200px]
+    mx-auto
+    px-6
+    grid
+    lg:grid-cols-2
+    gap-16
+    items-center;
+}
+
+/* Left */
+
+.about-badge{
+    @apply inline-flex
+    items-center
+    gap-2
+    bg-blue-100
+    text-blue-700
+    px-4
+    py-2
+    rounded-full
+    font-medium
+    mb-5;
+}
+
+.about-content h2{
+    @apply text-4xl
+    font-bold
+    text-gray-900
+    leading-tight
+    mb-6;
+}
+
+.about-content h2 span{
+    @apply text-blue-600;
+}
+
+.about-content p{
+    @apply text-gray-600
+    leading-8
+    mb-5;
+}
+
+/* Card */
+
+.about-card{
+    @apply bg-white
+    border
+    border-gray-300
+    rounded-3xl
+    p-8
+    shadow-lg
+    transition-all
+    duration-300;
+}
+.about-card:hover{
+    @apply -translate-y-2
+    shadow-xl
+    border-blue-500;
+}
+
+.about-card h3{
+    @apply text-2xl
+    font-bold
+    text-gray-900
+    mb-8;
+}
+
+/* Items */
+
+.about-item{
+    @apply flex
+    items-start
+    gap-4
+    mb-8;
+}
+
+.about-item:last-child{
+    @apply mb-0;
+}
+
+.about-item i{
+    @apply w-12
+    h-12
+    flex
+    items-center
+    justify-center
+    rounded-xl
+    bg-blue-100
+    text-blue-600
+    text-lg;
+}
+
+.about-item h4{
+    @apply font-semibold
+    text-gray-900
+    mb-1;
+}
+
+.about-item p{
+    @apply text-gray-600;
+}
+
+/* Responsive */
+
+@media (max-width:768px){
+
+    .about{
+        @apply py-16;
+    }
+
+    .about-inner{
+        @apply grid-cols-1
+        gap-10;
+    }
+
+    .about-content h2{
+        @apply text-3xl;
+    }
+
+    .about-card{
+        @apply p-6;
+    }
+
+}
+
 
 /*  PROJECTS  */
 
