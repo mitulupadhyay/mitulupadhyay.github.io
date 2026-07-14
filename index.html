@@ -23,14 +23,14 @@
     <!-- ==== NAVBAR =====  -->
     <header class="nav">
       <nav class="nav-inner">
-        <a href="#" class="nav-logo"
+        <a href="#hero" class="nav-logo"
           >MU
           <span>.</span>
         </a>
 
         <!-- ==== NAV-LINKS === -->
         <div class="nav-link">
-          <a href="#">Projects</a>
+          <a href="#projects">Projects</a>
           <a href="#">Tech Stack</a>
           <a href="#">Journey</a>
           <a href="#">Github</a>
@@ -61,7 +61,7 @@
 
     <!-- === HERO PAGE === -->
 
-    <section class="hero">
+    <section class="hero" id="hero">
       <div class="hero-inner">
         <!-- Left -->
         <div class="hero-content">
@@ -159,7 +159,6 @@
         </div>
 
         <div class="stat-card">
-
           <i class="fa-solid fa-puzzle-piece stat-icon"></i>
 
           <h3 class="stat-number" id="leetcode-count">x+</h3>
@@ -177,6 +176,256 @@
           <h4 class="stat-title">Learning</h4>
 
           <p class="stat-subtitle">& Building</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PROJECTS ================= -->
+
+    <section class="projects" id="projects">
+      <div class="projects-inner">
+        <!-- Heading -->
+
+        <div class="projects-heading">
+          <span class="projects-badge">
+            <i class="fa-solid fa-folder-open"></i>
+            Things I've Built
+          </span>
+
+          <h2>
+            Building products that solve
+            <span>real-world problems.</span>
+          </h2>
+
+          <p>
+            Each project reflects my journey toward becoming a software
+            engineer, combining clean UI, scalable architecture, and practical
+            problem solving.
+          </p>
+        </div>
+
+        <!-- ================= GRID ================= -->
+
+        <div class="projects-grid">
+          <!-- ================================================= -->
+          <!-- CAMPUS CONNECT -->
+          <!-- ================================================= -->
+
+          <article class="project-card">
+            <div class="project-image">
+              <div class="browser-bar">
+                <div class="browser-dots">
+                  <span class="red"></span>
+                  <span class="yellow"></span>
+                  <span class="green"></span>
+                </div>
+
+                <p>campusconnect.app</p>
+              </div>
+
+              <img src="./img/campusConnect.png" alt="CampusConnect Preview" />
+
+              <span class="featured-tag">
+                <i class="fa-solid fa-rocket"></i>
+                Currently Building
+              </span>
+            </div>
+
+            <div class="project-content">
+              <h3>CampusConnect</h3>
+
+              <p class="project-role">
+                AI-powered Campus Event Management Platform
+              </p>
+
+              <p class="project-description">
+                CampusConnect helps students discover events, organizers manage
+                registrations, and administrators streamline approvals through a
+                modern role-based platform.
+              </p>
+
+              <!-- Project Stats -->
+
+              <div class="project-meta">
+                <span>
+                  <i class="fa-solid fa-user"></i>
+                  Personal Project
+                </span>
+
+                <span>
+                  <i class="fa-regular fa-calendar"></i>
+                  2026
+                </span>
+
+                <span>
+                  <i class="fa-solid fa-bolt"></i>
+                  In Development
+                </span>
+              </div>
+
+              <!-- Stack -->
+
+              <div class="tech-stack">
+                <span>HTML</span>
+                <span>Tailwind CSS</span>
+                <span>JavaScript</span>
+              </div>
+
+              <!-- Features -->
+
+              <div class="project-features">
+                <div>
+                  <i class="fa-solid fa-circle-check"></i>
+                  Smart Event Discovery
+                </div>
+
+                <div>
+                  <i class="fa-solid fa-circle-check"></i>
+                  Role-Based Authentication
+                </div>
+
+                <div>
+                  <i class="fa-solid fa-circle-check"></i>
+                  Event Registration
+                </div>
+
+                <div>
+                  <i class="fa-solid fa-circle-check"></i>
+                  AI Recommendations (WIP)
+                </div>
+              </div>
+
+              <!-- Buttons -->
+
+              <div class="project-buttons">
+                <a href="#">
+                  Coming Soon
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+
+                <a
+                  href="https://github.com/mitulupadhyay/Campus-Connect"
+                  target="_blank"
+                >
+                  View Code
+
+                  <i class="fa-brands fa-github"></i>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- ================================================= -->
+          <!-- CHRONOGEN -->
+          <!-- ================================================= -->
+
+          <article class="project-card">
+            <div class="project-image">
+              <div class="browser-bar">
+                <div class="browser-dots">
+                  <span class="red"></span>
+                  <span class="yellow"></span>
+                  <span class="green"></span>
+                </div>
+
+                <p>chronogen.app</p>
+              </div>
+
+              <img src="./img/chronogen.png" alt="ChronoGen Preview" />
+
+              <span class="featured-tag">
+                <i class="fa-solid fa-trophy"></i>
+
+                Hackathon Project
+              </span>
+            </div>
+
+            <div class="project-content">
+              <h3>ChronoGen</h3>
+
+              <p class="project-role">Automatic Timetable Generator</p>
+
+              <p class="project-description">
+                Built during Watch The Code 2026, ChronoGen generates
+                conflict-free school timetables using a Genetic Algorithm
+                implemented entirely from scratch in JavaScript.
+              </p>
+
+              <div class="project-meta">
+                <span>
+                  <i class="fa-solid fa-users"></i>
+
+                  Team Tech4ALL
+                </span>
+                <span>
+                  <i class="fa-solid fa-trophy"></i>
+                  Top 5 Finalist
+                </span>
+
+                <span>
+                  <i class="fa-regular fa-calendar"></i>
+
+                  2026
+                </span>
+
+                <span>
+                  <i class="fa-solid fa-trophy"></i>
+
+                  Hackathon
+                </span>
+              </div>
+
+              <div class="tech-stack">
+                <span>HTML</span>
+
+                <span>CSS</span>
+
+                <span>JavaScript</span>
+
+                <span>Genetic Algorithm</span>
+              </div>
+
+              <div class="project-features">
+                <div>
+                  <i class="fa-solid fa-circle-check"></i>
+
+                  Conflict-Free Scheduling
+                </div>
+
+                <div>
+                  <i class="fa-solid fa-circle-check"></i>
+
+                  Genetic Algorithm
+                </div>
+
+                <div>
+                  <i class="fa-solid fa-circle-check"></i>
+
+                  CSV / JSON Export
+                </div>
+
+                <div>
+                  <i class="fa-solid fa-circle-check"></i>
+
+                  Live Evolution Visualization
+                </div>
+              </div>
+
+              <div class="project-buttons">
+                <a href="#">
+                  Coming Soon
+
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+
+                <a href="https://github.com/mitulupadhyay/ChronoGen-Automatic-Timetable-Generator" target="_blank">
+                  View Code
+
+                  <i class="fa-brands fa-github"></i>
+                </a>
+              </div>
+            </div>
+          </article>
         </div>
       </div>
     </section>

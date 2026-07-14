@@ -100,7 +100,7 @@ body{
 /* ==== HERO PAGE ===== */
 
 .hero{
-    @apply pt-16 pb-20;
+    @apply pt-28 pb-20;
 }
 .hero-inner{
     @apply max-w-[1200px] mx-auto px-6 lg:px-10 flex flex-col lg:flex-row items-start justify-between gap-12;
@@ -312,6 +312,578 @@ body{
 
     .stat-title{
         @apply text-base;
+    }
+
+}
+
+
+/* ================= PROJECTS ================= */
+
+.projects{
+    @apply py-20;
+}
+
+.projects-inner{
+    @apply max-w-[1200px] mx-auto px-6;
+}
+
+
+/* ================= HEADING ================= */
+
+.projects-heading{
+
+    @apply text-center mb-14;
+
+}
+
+
+.projects-badge{
+
+    @apply inline-flex
+    items-center
+    gap-2
+
+    bg-blue-100
+    text-blue-700
+
+    px-4
+    py-2
+
+    rounded-full
+
+    font-medium
+
+    mb-5;
+
+}
+
+
+.projects-heading h2{
+
+    @apply text-4xl
+    font-bold
+    text-gray-900
+    mb-4;
+
+}
+
+
+.projects-heading h2 span{
+
+    @apply text-blue-600;
+
+}
+
+
+.projects-heading p{
+
+    @apply max-w-2xl
+    mx-auto
+
+    text-gray-600
+    leading-7;
+
+}
+
+
+
+/* ================= GRID ================= */
+
+
+.projects-grid{
+
+    @apply grid
+    grid-cols-1
+    lg:grid-cols-2
+    gap-8;
+
+}
+
+
+
+/* ================= CARD ================= */
+
+
+.project-card{
+
+    @apply bg-gradient-to-br
+    from-white
+    to-slate-50
+
+    rounded-3xl
+
+    border
+    border-gray-200
+
+    overflow-hidden
+
+    shadow-md
+
+    transition-all
+    duration-300;
+
+}
+
+
+.project-card:hover{
+
+    @apply -translate-y-2
+    shadow-xl;
+
+}
+
+
+
+/* ================= IMAGE / BROWSER ================= */
+
+
+.project-image{
+
+    @apply relative
+    overflow-hidden
+    bg-gray-100;
+
+}
+
+
+.browser-bar{
+
+    @apply flex
+    items-center
+    justify-between
+
+    px-4
+    py-3
+
+    bg-gray-100
+
+    border-b
+    border-gray-200;
+
+}
+
+
+.browser-dots{
+
+    @apply flex
+    gap-2;
+
+}
+
+
+.browser-dots span{
+
+    @apply w-3
+    h-3
+    rounded-full;
+
+}
+
+
+.red{
+
+    @apply bg-red-400;
+
+}
+
+
+.yellow{
+
+    @apply bg-yellow-400;
+
+}
+
+
+.green{
+
+    @apply bg-green-400;
+
+}
+
+
+.browser-bar p{
+
+    @apply text-xs
+    text-gray-500
+    font-medium;
+
+}
+
+
+
+.project-image img{
+
+    @apply w-full
+    h-52
+
+    object-cover
+
+    transition-transform
+    duration-500;
+
+}
+
+
+.project-card:hover .project-image img{
+
+    @apply scale-105;
+
+}
+
+
+
+/* ================= TAG ================= */
+
+
+.featured-tag{
+
+    @apply absolute
+
+    bottom-4
+    left-4
+
+    bg-blue-600
+
+    text-white
+
+    text-xs
+
+    px-3
+    py-2
+
+    rounded-full
+
+    font-semibold
+
+    flex
+    items-center
+    gap-2;
+
+}
+
+
+
+/* ================= CONTENT ================= */
+
+
+.project-content{
+
+    @apply p-6;
+
+}
+
+
+
+.project-content h3{
+
+    @apply text-2xl
+
+    font-bold
+
+    text-gray-900
+
+    mb-2;
+
+}
+
+
+
+.project-role{
+
+    @apply text-blue-600
+
+    font-semibold
+
+    mb-4;
+
+}
+
+
+
+.project-description{
+
+    @apply text-gray-600
+
+    leading-7
+
+    mb-6;
+
+}
+
+
+
+/* ================= PROJECT META ================= */
+
+
+.project-meta{
+
+    @apply flex
+
+    flex-wrap
+
+    gap-5
+
+    text-sm
+
+    text-gray-500
+
+    mb-6;
+
+}
+
+
+.project-meta span{
+
+    @apply flex
+
+    items-center
+
+    gap-2;
+
+}
+
+
+.project-meta i{
+
+    @apply text-blue-600;
+
+}
+
+
+
+/* ================= STACK ================= */
+
+
+.tech-stack{
+
+    @apply flex
+
+    flex-wrap
+
+    gap-2
+
+    mb-6;
+
+}
+
+
+
+.tech-stack span{
+
+    @apply bg-blue-50
+
+    text-blue-700
+
+    text-sm
+
+    font-medium
+
+    px-3
+
+    py-1.5
+
+    rounded-full;
+
+}
+
+
+
+/* ================= FEATURES ================= */
+
+
+.project-features{
+
+    @apply grid
+
+    grid-cols-2
+
+    gap-3
+
+    mb-7;
+
+}
+
+
+
+.project-features div{
+
+    @apply flex
+
+    items-center
+
+    gap-2
+
+    text-sm
+
+    text-gray-700;
+
+}
+
+
+
+.project-features i{
+
+    @apply text-green-600;
+
+}
+
+
+
+/* ================= BUTTONS ================= */
+
+
+.project-buttons{
+
+    @apply flex
+
+    gap-3;
+
+}
+
+
+
+.project-buttons a{
+
+    @apply flex
+
+    items-center
+
+    justify-center
+
+    gap-2
+
+    px-5
+
+    py-3
+
+    rounded-xl
+
+    font-medium
+
+    transition-all
+
+    duration-300;
+
+}
+
+
+
+.project-buttons a:first-child{
+
+    @apply bg-blue-600
+
+    text-white;
+
+}
+
+
+
+.project-buttons a:first-child:hover{
+
+    @apply bg-blue-700
+
+    -translate-y-1;
+
+}
+
+
+
+.project-buttons a:last-child{
+
+    @apply border
+
+    border-gray-300
+
+    text-gray-700;
+
+}
+
+
+
+.project-buttons a:last-child:hover{
+
+    @apply border-blue-600
+
+    text-blue-600
+
+    -translate-y-1;
+
+}
+
+
+
+/* ================= PROJECT TYPES ================= */
+
+
+.project-card.featured{
+
+    @apply border-t-4
+    border-t-blue-600;
+
+}
+
+
+.project-card.hackathon{
+
+    @apply border-t-4
+    border-t-orange-500;
+
+}
+
+
+
+/* ================= RESPONSIVE ================= */
+
+
+@media(max-width:768px){
+
+    .projects{
+
+        @apply py-16;
+
+    }
+
+
+    .projects-heading h2{
+
+        @apply text-3xl;
+
+    }
+
+
+    .project-content{
+
+        @apply p-5;
+
+    }
+
+
+    .project-features{
+
+        @apply grid-cols-1;
+
+    }
+
+
+    .project-meta{
+
+        @apply flex-col
+        gap-3;
+
+    }
+
+
+    .project-buttons{
+
+        @apply flex-col;
+
+    }
+
+
+    .project-buttons a{
+
+        @apply w-full;
+
     }
 
 }
