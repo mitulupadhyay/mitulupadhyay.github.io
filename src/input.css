@@ -1346,9 +1346,7 @@ body{
     }
 
 }
-/* ===========================
-   HIGHLIGHTS SECTION
-=========================== */
+/* HIGHLIGHTS SECTION  */
 
 .highlights{
     @apply py-20 bg-gray-50;
@@ -1358,7 +1356,7 @@ body{
     @apply max-w-[1200px] mx-auto px-6;
 }
 
-/* ===== Heading ===== */
+/* === Heading === */
 
 .highlights-heading{
     @apply text-center mb-14;
@@ -1391,7 +1389,7 @@ body{
     leading-7;
 }
 
-/* ===== Grid ===== */
+/* === Grid === */
 
 .highlights-grid{
     @apply grid
@@ -1400,7 +1398,7 @@ body{
     gap-8;
 }
 
-/* ===== Card ===== */
+/* === Card === */
 
 .highlight-card{
     @apply bg-white
@@ -1423,7 +1421,7 @@ body{
     border-blue-500;
 }
 
-/* ===== Icon ===== */
+/* === Icon === */
 
 .highlight-icon{
     @apply w-14
@@ -1442,7 +1440,7 @@ body{
     mb-5;
 }
 
-/* ===== Label ===== */
+/* === Label === */
 
 .highlight-label{
     @apply text-sm
@@ -1453,7 +1451,7 @@ body{
     mb-2;
 }
 
-/* ===== Title ===== */
+/* === Title === */
 
 .highlight-card h3{
     @apply text-2xl
@@ -1462,7 +1460,7 @@ body{
     mb-3;
 }
 
-/* ===== Description ===== */
+/* === Description === */
 
 .highlight-card p{
     @apply text-gray-600
@@ -1470,7 +1468,7 @@ body{
     mb-8;
 }
 
-/* ===== Button ===== */
+/* === Button == */
 
 .highlight-card a{
     @apply inline-flex
@@ -1490,7 +1488,7 @@ body{
     @apply text-blue-700;
 }
 
-/* ===== Responsive ===== */
+/* === Responsive === */
 
 @media (max-width:768px){
 
@@ -1514,6 +1512,397 @@ body{
         @apply w-12
         h-12
         text-xl;
+    }
+
+}
+
+/* CONTACT */
+
+.contact{
+    @apply py-20;
+}
+
+.contact-inner{
+    @apply max-w-[1200px]
+    mx-auto
+    px-6;
+}
+
+/* Heading */
+
+.contact-heading{
+    @apply text-center
+    mb-14;
+}
+
+.contact-badge{
+    @apply inline-flex
+    items-center
+    gap-2
+
+    bg-blue-100
+    text-blue-700
+
+    px-4
+    py-2
+
+    rounded-full
+    font-medium
+
+    mb-5;
+}
+
+.contact-heading h2{
+    @apply text-4xl
+    font-bold
+    text-gray-900
+    mb-4;
+}
+
+.contact-heading span{
+    @apply text-blue-600;
+}
+
+.contact-heading p{
+    @apply max-w-2xl
+    mx-auto
+    text-gray-600
+    leading-7;
+}
+
+/*  Main Card  */
+
+.contact-card{
+    @apply bg-gray-100/25
+    border
+    border-gray-200
+    rounded-3xl
+    p-10
+    shadow-xl
+
+    transition-all
+    duration-300;
+}
+
+.contact-card:hover{
+    @apply -translate-y-2
+    shadow-xl;
+}
+
+/*  CTA */
+
+.contact-cta{
+    @apply text-center
+    mb-10;
+}
+
+.contact-cta h3{
+    @apply text-3xl
+    font-bold
+    text-gray-900
+    mb-3;
+}
+
+.contact-cta p{
+    @apply text-gray-600
+    max-w-xl
+    mx-auto
+    leading-7
+    mb-8;
+}
+
+/*   Buttons  */
+
+.contact-buttons{
+    @apply flex
+    flex-col
+    sm:flex-row
+    justify-center
+    gap-4;
+}
+
+.contact-buttons a{
+    @apply inline-flex
+    items-center
+    justify-center
+    gap-2
+
+    px-6
+    py-3
+
+    rounded-xl
+
+    font-medium
+
+    transition-all
+    duration-300;
+}
+
+/* Primary */
+
+.contact-buttons a:first-child{
+    @apply bg-blue-600
+    text-white;
+}
+
+.contact-buttons a:first-child:hover{
+    @apply bg-blue-700
+    -translate-y-1;
+}
+
+/* Secondary */
+
+.contact-buttons a:last-child{
+    @apply border
+    border-gray-300
+    text-gray-700;
+}
+
+.contact-buttons a:last-child:hover{
+    @apply border-blue-600
+    text-blue-600
+    -translate-y-1;
+}
+
+/*  Contact Grid */
+
+.contact-grid{
+    @apply grid
+    grid-cols-1
+    sm:grid-cols-2
+    gap-6;
+}
+
+/*  Contact Item */
+
+.contact-item{
+    @apply bg-gray-50
+    border
+    border-gray-200
+
+    rounded-2xl
+    shadow-md
+
+    p-6
+
+    flex
+    flex-col
+    items-center
+    text-center
+
+    transition-all
+    duration-300;
+}
+
+.contact-item:hover{
+    @apply -translate-y-2
+    shadow-xl
+    border-blue-500
+    bg-white;
+}
+
+.contact-item i{
+    @apply text-3xl
+    text-blue-600
+    mb-4;
+}
+
+.contact-item h4{
+    @apply text-xl
+    font-semibold
+    text-gray-900
+    mb-2;
+}
+
+.contact-item p{
+    @apply text-gray-600;
+}
+
+.contact-item p i{
+    @apply ml-2
+    transition-transform
+    duration-300;
+}
+
+.contact-item:hover p i{
+    @apply translate-x-1;
+}
+
+/*  Responsive */
+
+@media (max-width:768px){
+
+    .contact{
+        @apply py-16;
+    }
+
+    .contact-card{
+        @apply p-6;
+    }
+
+    .contact-heading h2{
+        @apply text-3xl;
+    }
+
+    .contact-cta h3{
+        @apply text-2xl;
+    }
+
+}
+
+/* FOOTER */
+
+.footer{
+    @apply bg-gray-900
+    text-white
+    pt-16
+    pb-8;
+}
+
+.footer-inner{
+    @apply max-w-[1200px]
+    mx-auto
+    px-6;
+}
+
+/* TOP */
+
+.footer-top{
+    @apply flex
+    flex-col
+    md:flex-row
+    items-center
+    justify-between
+    gap-8
+    mb-8;
+}
+
+/* Brand */
+
+.footer-brand{
+    @apply max-w-xl;
+}
+
+.footer-logo{
+    @apply text-4xl
+    font-bold
+    text-white
+    mb-4
+    inline-block
+    transition-colors
+    duration-300;
+}
+
+.footer-logo:hover{
+    @apply text-blue-500;
+}
+
+.footer-brand p{
+    @apply text-gray-300
+    leading-7;
+}
+
+/* BACK TO TOP */
+
+.back-to-top{
+    @apply inline-flex
+    items-center
+    gap-2
+
+    border
+    border-gray-400
+
+    px-5
+    py-3
+
+    rounded-xl
+
+    text-gray-200
+
+    transition-all
+    duration-300;
+}
+
+.back-to-top:hover{
+    @apply bg-blue-600
+    border-blue-600
+    text-white
+    -translate-y-1;
+}
+
+/* DIVIDER */
+
+.footer-divider{
+    @apply border-t
+    border-gray-600
+    my-8;
+}
+
+/* SOCIAL LINKS */
+
+.footer-social{
+    @apply flex
+    flex-wrap
+    justify-center
+    gap-8;
+}
+
+.footer-social a{
+    @apply inline-flex
+    items-center
+    gap-2
+
+    text-gray-300
+    
+
+    transition-all
+    duration-300;
+
+    font-size:18px;
+}
+
+.footer-social a:hover{
+    @apply text-blue-500
+    -translate-y-1.5;
+}
+
+.footer-social i{
+    @apply text-xl text-gray-100;
+}
+
+
+/* BOTTOM */
+
+.footer-bottom{
+    @apply flex
+    flex-col
+    md:flex-row
+    items-center
+    justify-between
+    gap-4
+
+    text-sm
+    text-gray-300;
+}
+
+/*  RESPONSIVE */
+
+@media (max-width:768px){
+
+    .footer{
+        @apply pt-12;
+    }
+
+    .footer-top{
+        @apply text-center;
+    }
+
+    .footer-brand{
+        @apply max-w-full;
+    }
+
+    .footer-bottom{
+        @apply text-center;
     }
 
 }
