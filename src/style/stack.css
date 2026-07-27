@@ -1,0 +1,90 @@
+   /* TECH STACK */
+
+.stack {
+    @apply relative overflow-hidden py-20;
+}
+
+.stack-inner {
+    @apply max-w-[1100px];
+}
+
+.stack-heading {
+    @apply text-center mb-14;
+}
+
+.stack-grid {
+    @apply grid grid-cols-1 md:grid-cols-2 gap-8;
+}
+
+/*  Card  */
+
+.stack-card {
+    @apply rounded-2xl p-7 shadow-md shadow-black/20;
+}
+
+.tools-card {
+    @apply md:col-span-2;
+}
+
+.stack-card h3 {
+    @apply text-xl font-semibold text-slate-100;
+}
+
+.stack-card-top {
+    @apply flex items-center justify-between mb-6;
+}
+
+.stack-card > h3 {
+    @apply mb-6;
+}
+
+/*  Technology grid */
+
+.stack-tech-grid {
+    @apply grid grid-cols-2 gap-4;
+}
+
+.tech-item {
+    @apply flex items-center gap-3
+    bg-slate-950/60 border border-slate-800
+    rounded-xl px-4 py-3
+    transition-all duration-300;
+}
+
+.tech-item:hover {
+    @apply bg-blue-500/5 border-blue-500/50 -translate-y-1;
+}
+
+.tech-item img {
+    @apply w-7 h-7 shrink-0 transition-transform duration-300;
+}
+
+.tech-item:hover img {
+    @apply scale-110;
+}
+
+.tech-item span {
+    @apply text-sm font-medium text-slate-300;
+}
+
+@media (max-width: 768px) {
+    .stack {
+        @apply py-16;
+    }
+
+    .stack-heading h2 {
+        @apply text-3xl;
+    }
+
+    .stack-card {
+        @apply p-6;
+    }
+
+    .stack-card h3 {
+        @apply text-lg;
+    }
+
+    .stack-tech-grid {
+        @apply grid-cols-1;
+    }
+}

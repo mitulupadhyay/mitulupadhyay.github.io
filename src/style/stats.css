@@ -1,0 +1,60 @@
+   /* STATS */
+
+.stats {
+    @apply py-12;
+}
+
+.stats-inner {
+    @apply max-w-[1200px] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6;
+}
+
+/* Card surface + hover */
+.stat-card {
+    @apply rounded-2xl p-6 shadow-md shadow-black/20;
+}
+
+/* Top accent bar */
+
+.stat-accent {
+    @apply w-12 h-1 bg-blue-500 rounded-full mb-6 transition-all duration-300;
+}
+
+.stat-card:hover .stat-accent {
+    @apply w-20;
+}
+
+.stat-value {
+    @apply text-5xl font-black text-slate-50 leading-none transition-colors duration-300;
+}
+
+.stat-card:hover .stat-value {
+    @apply text-blue-400;
+}
+
+
+
+.stat-text {
+    @apply text-2xl font-bold leading-tight;
+}
+
+.stat-label {
+    @apply mt-4 text-slate-400 text-base leading-6;
+}
+
+@media (max-width: 768px) {
+    .stats {
+        @apply py-10;
+    }
+
+    .stat-card {
+        @apply p-5;
+    }
+
+    .stat-value {
+        @apply text-4xl;
+    }
+
+    .stat-text {
+        @apply text-xl;
+    }
+}

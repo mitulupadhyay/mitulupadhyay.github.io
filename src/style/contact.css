@@ -1,0 +1,118 @@
+   /* CONTACT */
+
+.contact {
+    @apply py-20;
+}
+
+.contact-inner {
+    @apply max-w-[1200px];
+}
+
+.contact-heading {
+    @apply text-center mb-14;
+}
+
+/*  Main card */
+
+.contact-card {
+    @apply bg-slate-900/40 border border-slate-800 backdrop-blur-sm
+    rounded-3xl p-10 shadow-xl shadow-black/20
+    transition-all duration-300;
+}
+
+.contact-card:hover {
+    @apply shadow-black/30;
+}
+
+.contact-cta {
+    @apply text-center mb-10;
+}
+
+.contact-cta h3 {
+    @apply text-3xl font-bold text-slate-50 mb-3;
+}
+
+.contact-cta p {
+    @apply text-slate-400 max-w-xl mx-auto leading-7 mb-8;
+}
+
+/*  Buttons  */
+
+.contact-buttons {
+    @apply flex flex-col sm:flex-row justify-center gap-4;
+}
+
+.contact-buttons a {
+    @apply inline-flex items-center justify-center gap-2
+    px-6 py-3 rounded-xl font-medium
+    transition-all duration-300;
+}
+
+.contact-buttons a:first-child {
+    @apply bg-blue-600 text-white;
+}
+
+.contact-buttons a:first-child:hover {
+    @apply bg-blue-500 -translate-y-1;
+}
+
+.contact-buttons a:last-child {
+    @apply border border-slate-700 text-slate-300;
+}
+
+.contact-buttons a:last-child:hover {
+    @apply border-blue-500 text-blue-400 -translate-y-1;
+}
+
+/*  Contact grid  */
+
+.contact-grid {
+    @apply grid grid-cols-1 sm:grid-cols-2 gap-6;
+}
+
+.contact-item {
+    @apply bg-slate-950/50 rounded-2xl shadow-md shadow-black/20 p-6
+    flex flex-col items-center text-center;
+}
+
+.contact-item:hover {
+    @apply bg-slate-900/60;
+}
+
+.contact-item i {
+    @apply text-3xl text-blue-400 mb-4;
+}
+
+.contact-item h4 {
+    @apply text-xl font-semibold text-slate-100 mb-2;
+}
+
+.contact-item p {
+    @apply text-slate-400;
+}
+
+.contact-item p i {
+    @apply ml-2 text-base text-inherit mb-0 transition-transform duration-300;
+}
+
+.contact-item:hover p i {
+    @apply translate-x-1;
+}
+
+@media (max-width: 768px) {
+    .contact {
+        @apply py-16;
+    }
+
+    .contact-card {
+        @apply p-6;
+    }
+
+    .contact-heading h2 {
+        @apply text-3xl;
+    }
+
+    .contact-cta h3 {
+        @apply text-2xl;
+    }
+}

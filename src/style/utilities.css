@@ -1,0 +1,99 @@
+/*  Section badge */
+.about-badge,
+.projects-badge,
+.stack-badge,
+.journey-badge,
+.highlights-badge,
+.contact-badge {
+    @apply inline-flex items-center gap-2
+    bg-blue-500/10 text-blue-400 border border-blue-500/20
+    px-4 py-2 rounded-full
+    text-sm font-medium tracking-wide
+    mb-5;
+}
+
+/* ---- Section heading h2 ---- */
+.projects-heading h2,
+.stack-heading h2,
+.journey-heading h2,
+.highlights-heading h2,
+.contact-heading h2 {
+    @apply text-4xl font-bold text-slate-50 mb-4;
+}
+
+.projects-heading h2 span,
+.stack-heading h2 span,
+.journey-heading h2 span,
+.highlights-heading h2 span,
+.contact-heading span {
+    @apply text-blue-400;
+}
+
+/* Section Paragraph  */
+
+.projects-heading p,
+.stack-description,
+.journey-heading p,
+.highlights-heading p,
+.contact-heading p {
+    @apply max-w-2xl mx-auto text-slate-400 leading-7;
+}
+
+/*  Card surface  */
+.stat-card,
+.about-card,
+.project-card,
+.stack-card,
+.timeline-card,
+.highlight-card,
+.contact-item {
+    @apply bg-slate-900/50 border border-slate-800 backdrop-blur-sm;
+    transition:
+        translate 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+        transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+        box-shadow 0.4s ease,
+        border-color 0.4s ease,
+        background-color 0.4s ease;
+}
+
+.stat-card:hover,
+.about-card:hover,
+.project-card:hover,
+.stack-card:hover,
+.timeline-card:hover,
+.highlight-card:hover,
+.contact-item:hover {
+    @apply -translate-y-2 border-blue-500/50;
+    box-shadow:
+        0 20px 40px -12px rgba(0, 0, 0, 0.35),
+        0 0 0 1px rgba(59, 130, 246, 0.08),
+        0 12px 28px -8px rgba(59, 130, 246, 0.18);
+}
+
+/*  Small rounded tags(badge) */
+.tech-stack span,
+.learning-badge {
+    @apply bg-blue-500/10 text-blue-400 border border-blue-500/20
+    text-sm font-medium px-3 py-1.5 rounded-full;
+}
+
+.timeline-tags span {
+    @apply bg-slate-800 text-slate-300 text-sm px-4 py-2 rounded-full;
+}
+
+ /* Traffic-light dots */
+
+.dot.red,
+.browser-dots .red {
+    @apply bg-red-500;
+}
+
+.dot.yellow,
+.browser-dots .yellow {
+    @apply bg-yellow-400;
+}
+
+.dot.green,
+.browser-dots .green {
+    @apply bg-green-500;
+}

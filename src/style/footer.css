@@ -1,0 +1,109 @@
+   /* FOOTER */
+
+.footer {
+    @apply relative overflow-hidden bg-slate-950 border-t border-slate-800
+    text-white pt-20 pb-8;
+}
+
+.footer-inner {
+    @apply relative z-10 max-w-[900px] mx-auto px-6;
+}
+
+/* ---- Background glow ---- */
+
+.footer-glow {
+    @apply absolute rounded-full blur-3xl;
+}
+
+.footer-glow-1 {
+    @apply w-72 h-72 bg-blue-500/10 -top-28 -left-28;
+}
+
+.footer-glow-2 {
+    @apply w-80 h-80 bg-cyan-500/10 -bottom-32 -right-24;
+}
+
+/*  Brand */
+
+.footer-brand {
+    @apply flex flex-col items-center text-center;
+}
+
+.footer-logo {
+    @apply w-16 h-16 flex items-center justify-center rounded-full
+    bg-gradient-to-br from-blue-500 to-cyan-500
+    text-2xl font-bold mb-6
+    transition-all duration-300;
+}
+
+.footer-logo:hover {
+    @apply scale-110 shadow-lg shadow-blue-500/30;
+}
+
+.footer-brand h3 {
+    @apply text-3xl font-bold mb-4;
+}
+
+.footer-brand p {
+    @apply max-w-xl text-slate-400 leading-7;
+}
+
+/*  Navigation  */
+
+.footer-nav {
+    @apply flex flex-wrap justify-center gap-8 mt-12 mb-12;
+}
+
+.footer-nav a {
+    @apply text-slate-300 font-medium transition-all duration-300;
+}
+
+.footer-nav a:hover {
+    @apply text-blue-400;
+}
+
+/* Social links  */
+
+
+.footer-social {
+    @apply flex justify-center gap-6 mb-14;
+}
+
+.footer-social a {
+    @apply w-12 h-12 flex items-center justify-center rounded-full
+    border border-slate-700 text-xl text-slate-300
+    transition-all duration-300;
+}
+
+.footer-social a:hover {
+    @apply bg-blue-600 border-blue-600 text-white -translate-y-1;
+}
+
+/*  Divider and bottom  */
+
+.footer-divider {
+    @apply border-t border-slate-800 mb-8;
+}
+
+.footer-bottom {
+    @apply flex flex-col md:flex-row items-center justify-between gap-4
+    text-sm text-slate-500;
+}
+
+@media (max-width: 768px) {
+    .footer {
+        @apply pt-16;
+    }
+
+    .footer-brand h3 {
+        @apply text-2xl;
+    }
+
+    .footer-nav {
+        @apply gap-5;
+    }
+
+    .footer-bottom {
+        @apply text-center;
+    }
+}

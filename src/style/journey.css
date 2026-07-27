@@ -1,0 +1,79 @@
+   /* JOURNEY  TIMELINE */
+
+.journey {
+    @apply py-20;
+}
+
+.journey-inner {
+    @apply max-w-[1000px];
+}
+
+.journey-heading {
+    @apply text-center mb-14;
+}
+
+/*  Timeline rail */
+
+.timeline {
+    @apply relative ml-8 pl-10 border-l-2 border-slate-800 space-y-10;
+}
+
+.timeline-card {
+    @apply relative rounded-2xl p-6 shadow-md shadow-black/20;
+}
+
+/*  Circle icon on the rail  */
+
+.timeline-icon {
+    @apply absolute top-6 -left-[66px]
+    w-12 h-12 rounded-full
+    bg-blue-600 text-white
+    flex items-center justify-center
+    ring-4 ring-slate-950;
+}
+
+.trophy {
+    @apply bg-yellow-500;
+}
+
+.timeline-year {
+    @apply text-sm font-semibold text-blue-400;
+}
+
+.timeline-card h3 {
+    @apply text-2xl font-bold text-slate-50 mt-2 mb-4;
+}
+
+.timeline-card p {
+    @apply text-slate-400 leading-7 mb-5;
+}
+
+.timeline-tags {
+    @apply flex flex-wrap gap-3;
+}
+
+@media (max-width: 768px) {
+    .journey {
+        @apply py-16;
+    }
+
+    .journey-heading h2 {
+        @apply text-3xl;
+    }
+
+    .timeline {
+        @apply pl-8;
+    }
+
+    .timeline-icon {
+        @apply -left-[45px] w-10 h-10 text-base;
+    }
+
+    .timeline-card {
+        @apply p-5;
+    }
+
+    .timeline-card h3 {
+        @apply text-xl;
+    }
+}
