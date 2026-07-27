@@ -95,8 +95,6 @@ const revealElements = document.querySelectorAll(".reveal");
 
 const CARD_STAGGER_MS = 120; // gap between each card's entrance
 
-// Maps a card's `data-anim` attribute to the keyframe that plays for it.
-// Cards with no attribute just rise up (the default).
 const ANIMATION_BY_TYPE = {
   up: "fadeSlideUp",
   left: "slideInFromLeft",
@@ -159,7 +157,10 @@ fetch(LEETCODE_STATS_URL)
     if (typeof solved !== "number") return;
 
     leetcodeCounters.forEach((el) => {
-      el.textContent = String(solved);
+      el.dataset.finalValue = String(solved);
+      if (el.dataset.animating !== "true") {
+        el.textContent = String(solved);
+      }
     });
   })
   .catch((error) => {
@@ -174,19 +175,29 @@ function animateCounter(el) {
   if (!match) return; // e.g. "Learning" — nothing to count
 
   const digits = match[1].length; // preserve leading zeros, e.g. "01"
-  const target = parseInt(match[1], 10);
   const suffix = match[2];
   const duration = 900;
   const start = performance.now();
 
+  el.dataset.animating = "true";
+
   function tick(now) {
+    const target = el.dataset.finalValue
+      ? parseInt(el.dataset.finalValue, 10)
+      : parseInt(match[1], 10);
+
     const progress = Math.min((now - start) / duration, 1);
     const eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic
     const value = Math.round(eased * target);
     el.textContent = String(value).padStart(digits, "0") + suffix;
 
-    if (progress < 1) requestAnimationFrame(tick);
-    else el.textContent = original;
+    if (progress < 1) {
+      requestAnimationFrame(tick);
+    } else {
+      const finalDigits = el.dataset.finalValue || match[1];
+      el.textContent = finalDigits + suffix;
+      el.dataset.animating = "false";
+    }
   }
 
   requestAnimationFrame(tick);

@@ -71,7 +71,7 @@
     animation: slideInFromRight 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
 }
 
-/*  About :- text fades up, quick-facts card slides   */
+/*  About :- text fades up  quick-facts card slides   */
 
 .about-content,
 .about-card {
