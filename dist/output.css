@@ -63,6 +63,7 @@
     --font-weight-extrabold: 800;
     --font-weight-black: 900;
     --tracking-wide: 0.025em;
+    --tracking-wider: 0.05em;
     --leading-tight: 1.25;
     --radius-xl: 0.75rem;
     --radius-2xl: 1rem;
@@ -1612,6 +1613,116 @@ body {
     padding: calc(var(--spacing) * 5);
   }
   .timeline-card h3 {
+    font-size: var(--text-xl);
+    line-height: var(--tw-leading, var(--text-xl--line-height));
+  }
+}
+.highlights {
+  padding-block: calc(var(--spacing) * 20);
+}
+.highlights-inner {
+  max-width: 1200px;
+}
+.highlights-heading {
+  margin-bottom: calc(var(--spacing) * 14);
+  text-align: center;
+}
+.highlights-grid {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: calc(var(--spacing) * 8);
+  @media (width >= 48rem) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+.highlight-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--radius-3xl);
+  padding: calc(var(--spacing) * 8);
+  --tw-shadow: 0 4px 6px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 2px 4px -2px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
+  box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  --tw-shadow-color: color-mix(in srgb, #000 20%, transparent);
+  @supports (color: color-mix(in lab, red, red)) {
+    --tw-shadow-color: color-mix(in oklab, color-mix(in oklab, var(--color-black) 20%, transparent) var(--tw-shadow-alpha), transparent);
+  }
+}
+.highlight-icon {
+  margin-bottom: calc(var(--spacing) * 5);
+  display: flex;
+  height: calc(var(--spacing) * 14);
+  width: calc(var(--spacing) * 14);
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-2xl);
+  background-color: color-mix(in srgb, oklch(62.3% 0.214 259.815) 10%, transparent);
+  @supports (color: color-mix(in lab, red, red)) {
+    background-color: color-mix(in oklab, var(--color-blue-500) 10%, transparent);
+  }
+  font-size: var(--text-2xl);
+  line-height: var(--tw-leading, var(--text-2xl--line-height));
+  color: var(--color-blue-400);
+}
+.highlight-label {
+  margin-bottom: calc(var(--spacing) * 2);
+  font-size: var(--text-sm);
+  line-height: var(--tw-leading, var(--text-sm--line-height));
+  --tw-font-weight: var(--font-weight-semibold);
+  font-weight: var(--font-weight-semibold);
+  --tw-tracking: var(--tracking-wider);
+  letter-spacing: var(--tracking-wider);
+  color: var(--color-blue-400);
+  text-transform: uppercase;
+}
+.highlight-card h3 {
+  margin-bottom: calc(var(--spacing) * 3);
+  font-size: var(--text-2xl);
+  line-height: var(--tw-leading, var(--text-2xl--line-height));
+  --tw-font-weight: var(--font-weight-bold);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-slate-50);
+}
+.highlight-card p {
+  margin-bottom: calc(var(--spacing) * 8);
+  --tw-leading: calc(var(--spacing) * 7);
+  line-height: calc(var(--spacing) * 7);
+  color: var(--color-slate-400);
+}
+.highlight-card a {
+  margin-top: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: calc(var(--spacing) * 2);
+  --tw-font-weight: var(--font-weight-semibold);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-blue-400);
+  transition-property: all;
+  transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+  transition-duration: var(--tw-duration, var(--default-transition-duration));
+  --tw-duration: 300ms;
+  transition-duration: 300ms;
+}
+.highlight-card a:hover {
+  color: var(--color-blue-300);
+}
+@media (max-width: 768px) {
+  .highlights {
+    padding-block: calc(var(--spacing) * 16);
+  }
+  .highlights-heading h2 {
+    font-size: var(--text-3xl);
+    line-height: var(--tw-leading, var(--text-3xl--line-height));
+  }
+  .highlight-card {
+    padding: calc(var(--spacing) * 6);
+  }
+  .highlight-card h3 {
+    font-size: var(--text-xl);
+    line-height: var(--tw-leading, var(--text-xl--line-height));
+  }
+  .highlight-icon {
+    height: calc(var(--spacing) * 12);
+    width: calc(var(--spacing) * 12);
     font-size: var(--text-xl);
     line-height: var(--tw-leading, var(--text-xl--line-height));
   }
