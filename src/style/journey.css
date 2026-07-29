@@ -22,14 +22,15 @@
     @apply relative rounded-2xl p-6 shadow-md shadow-black/20;
 }
 
-/*  Circle icon on the rail  */
+/*  Circle icon on the railing   */
 
 .timeline-icon {
-    @apply absolute top-6 -left-[66px]
+    @apply absolute top-6
     w-12 h-12 rounded-full
     bg-blue-600 text-white
     flex items-center justify-center
     ring-4 ring-slate-950;
+    left: calc(-2.5rem - 1.5rem - 1px);
 }
 
 .trophy {
@@ -66,7 +67,8 @@
     }
 
     .timeline-icon {
-        @apply -left-[45px] w-10 h-10 text-base;
+        @apply w-10 h-10 text-base;
+        left: calc(-2rem - 1.25rem - 1px);
     }
 
     .timeline-card {
