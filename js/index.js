@@ -142,26 +142,45 @@ function playStagger(section) {
 const LEETCODE_USERNAME = "Mitul_Upadhyay";
 const LEETCODE_UNAVAILABLE = "—";
 
+// Multiple independent providers, tried in order. Having more than one
+// matters because these are free community-run APIs and any single one
+// can be down, cold-starting, or rate-limited at a given moment.
 const LEETCODE_SOURCES = [
   {
     url: `https://leetcode-stats.tashif.codes/${LEETCODE_USERNAME}`,
     read: (json) => json.totalSolved,
   },
   {
+    url: `https://leetcode-api-faisalshohag.vercel.app/${LEETCODE_USERNAME}`,
+    read: (json) => json.totalSolved,
+  },
+  {
     url: `https://alfa-leetcode-api.onrender.com/${LEETCODE_USERNAME}/solved`,
-    read: (json) => json.solvedProblem,
+    read: (json) => json.solvedProblem ?? json.totalSolved,
   },
 ];
+
+const LEETCODE_FETCH_TIMEOUT_MS = 15000; // generous, since free hosts can cold-start
 
 const leetcodeCounters = [
   document.getElementById("stats-leetcode-count"),
   document.getElementById("highlights-leetcode-count"),
 ].filter(Boolean);
 
+async function fetchWithTimeout(url, timeoutMs) {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), timeoutMs);
+  try {
+    return await fetch(url, { signal: controller.signal });
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
 async function fetchLeetcodeSolved() {
   for (const source of LEETCODE_SOURCES) {
     try {
-      const res = await fetch(source.url);
+      const res = await fetchWithTimeout(source.url, LEETCODE_FETCH_TIMEOUT_MS);
       if (!res.ok) throw new Error(`HTTP ${res.status} ${res.statusText}`);
 
       const json = await res.json();
