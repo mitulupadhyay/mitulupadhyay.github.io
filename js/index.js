@@ -45,7 +45,7 @@ window.addEventListener("scroll", () => {
   navEl.classList.toggle("shadow-black/20", window.scrollY > 10);
 });
 
-//    FOOTER — DYNAMIC COPYRIGHT YEAR
+//    FOOTER DYNAMIC COPYRIGHT YEAR
 
 const yearElement = document.getElementById("current-year");
 
@@ -53,7 +53,7 @@ if (yearElement) {
   yearElement.textContent = new Date().getFullYear();
 }
 
-//    HERO — TYPED NAME EFFECT
+//    HERO TYPED NAME EFFECT
 
 const nameElement = document.getElementById("typed-name");
 const names = ["Mitul...", "Mitul Upadhyay"];
@@ -89,7 +89,7 @@ function typeName() {
 
 typeName();
 
-//    SCROLL REVEAL (sections + staggered card grids)
+//    SCROLL REVEAL
 
 const revealElements = document.querySelectorAll(".reveal");
 
@@ -137,45 +137,86 @@ function playStagger(section) {
   topLevelGroups.forEach((group) => staggerGroup(group));
 }
 
-//    LEETCODE — LIVE STATS
+//    LEETCODE LIVE STATS
 
 const LEETCODE_USERNAME = "Mitul_Upadhyay";
-const LEETCODE_STATS_URL = `https://leetcode-stats.tashif.codes/${LEETCODE_USERNAME}/stats`;
+const LEETCODE_UNAVAILABLE = "—";
+
+const LEETCODE_SOURCES = [
+  {
+    url: `https://leetcode-stats.tashif.codes/${LEETCODE_USERNAME}`,
+    read: (json) => json.totalSolved,
+  },
+  {
+    url: `https://alfa-leetcode-api.onrender.com/${LEETCODE_USERNAME}/solved`,
+    read: (json) => json.solvedProblem,
+  },
+];
 
 const leetcodeCounters = [
   document.getElementById("stats-leetcode-count"),
   document.getElementById("highlights-leetcode-count"),
 ].filter(Boolean);
 
-fetch(LEETCODE_STATS_URL)
-  .then((res) => {
-    if (!res.ok) throw new Error(`LeetCode stats API responded ${res.status}`);
-    return res.json();
-  })
-  .then((json) => {
-    const solved = json?.data?.totalSolved;
-    if (typeof solved !== "number") return;
+async function fetchLeetcodeSolved() {
+  for (const source of LEETCODE_SOURCES) {
+    try {
+      const res = await fetch(source.url);
+      if (!res.ok) throw new Error(`HTTP ${res.status} ${res.statusText}`);
 
-    leetcodeCounters.forEach((el) => {
-      el.dataset.finalValue = String(solved);
-      if (el.dataset.animating !== "true") {
-        el.textContent = String(solved);
+      const json = await res.json();
+      const solved = source.read(json);
+
+      if (typeof solved !== "number" || Number.isNaN(solved)) {
+        throw new Error(
+          `no solved count in response: ${JSON.stringify(json).slice(0, 200)}`
+        );
       }
-    });
-  })
-  .catch((error) => {
-    console.warn("LeetCode stats unavailable, showing fallback number:", error);
-  });
 
-/*  Stats: numbers count when  section  revealed */
+      return solved;
+    } catch (error) {
+      console.warn(`LeetCode: source failed - ${source.url}`, error);
+    }
+  }
+
+  return null;
+}
+
+fetchLeetcodeSolved().then((solved) => {
+  if (solved === null) {
+    console.error(
+      "LeetCode: all stats sources failed, showing an unavailable state rather than a wrong number."
+    );
+    leetcodeCounters.forEach((el) => {
+      el.textContent = LEETCODE_UNAVAILABLE;
+    });
+    return;
+  }
+
+  leetcodeCounters.forEach((el) => {
+    el.dataset.finalValue = String(solved);
+
+    if (el.dataset.animating === "true") return;
+
+    // Section already revealed, so count up now.
+    // Otherwise the reveal observer animates it when it scrolls into view.
+    if (el.dataset.revealed === "true") animateCounter(el);
+    else el.textContent = String(solved);
+  });
+});
+
+//  Stats numbers count
 
 function animateCounter(el) {
   const original = el.textContent.trim();
   const match = original.match(/^(\d+)(.*)$/);
-  if (!match) return; // e.g. "Learning" — nothing to count
+  const finalValue = el.dataset.finalValue;
 
-  const digits = match[1].length; // preserve leading zeros, e.g. "01"
-  const suffix = match[2];
+
+  if (!match && !finalValue) return;
+
+  const digits = match ? match[1].length : finalValue.length; // preserve leading zeros, e.g. "01"
+  const suffix = match ? match[2] : "";
   const duration = 900;
   const start = performance.now();
 
@@ -187,7 +228,7 @@ function animateCounter(el) {
       : parseInt(match[1], 10);
 
     const progress = Math.min((now - start) / duration, 1);
-    const eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic
+    const eased = 1 - Math.pow(1 - progress, 3);
     const value = Math.round(eased * target);
     el.textContent = String(value).padStart(digits, "0") + suffix;
 
@@ -203,6 +244,11 @@ function animateCounter(el) {
   requestAnimationFrame(tick);
 }
 
+function revealCounter(el) {
+  el.dataset.revealed = "true";
+  animateCounter(el);
+}
+
 const revealObserver = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
@@ -212,14 +258,14 @@ const revealObserver = new IntersectionObserver(
 
         if (entry.target.id === "stats") {
           entry.target.querySelectorAll(".stat-value").forEach((el, index) => {
-            setTimeout(() => animateCounter(el), index * CARD_STAGGER_MS + 300);
+            setTimeout(() => revealCounter(el), index * CARD_STAGGER_MS + 300);
           });
         }
 
         if (entry.target.id === "highlights") {
           const counter = entry.target.querySelector("#highlights-leetcode-count");
           if (counter) {
-            setTimeout(() => animateCounter(counter), CARD_STAGGER_MS + 300);
+            setTimeout(() => revealCounter(counter), CARD_STAGGER_MS + 300);
           }
         }
 
@@ -250,7 +296,7 @@ const timelineObserver = new IntersectionObserver(
 
 timelineCards.forEach((card) => timelineObserver.observe(card));
 
-//    SCROLLSPY — highlight the nav 
+//    highlight the nav 
 
 const navAnchors = document.querySelectorAll('.nav-link a[href^="#"]');
 const spySections = [...navAnchors]
@@ -268,7 +314,7 @@ const spyObserver = new IntersectionObserver(
       });
     });
   },
-  { rootMargin: "-40% 0px -55% 0px" } // trigger around the vertical middle
+  { rootMargin: "-40% 0px -55% 0px" }
 );
 
 spySections.forEach((section) => spyObserver.observe(section));
